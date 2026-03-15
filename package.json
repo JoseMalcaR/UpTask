@@ -1,0 +1,19 @@
+{
+  "name": "uptask-php-mvc-sass",
+  "version": "1.0.0",
+  "description": "UpTask",
+  "author": "Jose Malca joseb.malca@gmail.com",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.75.0"
+  }
+}
