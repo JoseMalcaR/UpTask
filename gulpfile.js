@@ -11,7 +11,10 @@ const paths = {
 }
 
 export function css( done ) {
-    src(paths.scss, {sourcemaps: true})
+    src(paths.scss, {
+        sourcemaps: true,
+        ignore: ['src/scss/**/_*.scss']
+    })
         .pipe( sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError) )

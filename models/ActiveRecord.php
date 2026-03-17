@@ -9,6 +9,7 @@ class ActiveRecord {
 
     // Alertas y Mensajes
     protected static $alertas = [];
+    public $id;
     
     // Definir la conexión a la BD - includes/database.php
     public static function setDB($database) {
@@ -41,6 +42,9 @@ class ActiveRecord {
         return $resultado;
     }
 
+    /**
+     * @return array<int, static>
+     */
     public static function all() {
         $query = "SELECT * FROM " . static::$tabla;
         $resultado = self::consultarSQL($query);
@@ -48,27 +52,39 @@ class ActiveRecord {
     }
 
     // Busca un registro por su id
+    /**
+     * @return static|null
+     */
     public static function find($id) {
-        $query = "SELECT * FROM " . static::$tabla  ." WHERE id = ${id}";
+        $query = "SELECT * FROM " . static::$tabla  ." WHERE id = {$id}";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
     // Obtener Registro
+    /**
+     * @return static|null
+     */
     public static function get($limite) {
-        $query = "SELECT * FROM " . static::$tabla . " LIMIT ${limite}";
+        $query = "SELECT * FROM " . static::$tabla . " LIMIT {$limite}";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
     // Busqueda Where con Columna 
+    /**
+     * @return static|null
+     */
     public static function where($columna, $valor) {
-        $query = "SELECT * FROM " . static::$tabla . " WHERE ${columna} = '${valor}'";
+        $query = "SELECT * FROM " . static::$tabla . " WHERE {$columna} = '{$valor}'";
         $resultado = self::consultarSQL($query);
         return array_shift( $resultado ) ;
     }
 
     // SQL para Consultas Avanzadas.
+    /**
+     * @return array<int, static>
+     */
     public static function SQL($consulta) {
         $query = $consulta;
         $resultado = self::consultarSQL($query);
@@ -124,6 +140,9 @@ class ActiveRecord {
         return $resultado;
     }
 
+    /**
+     * @return array<int, static>
+     */
     public static function consultarSQL($query) {
         // Consultar la base de datos
         $resultado = self::$db->query($query);
@@ -141,6 +160,10 @@ class ActiveRecord {
         return $array;
     }
 
+    /**
+     * @param array<string, mixed> $registro
+     * @return static
+     */
     protected static function crearObjeto($registro) {
         $objeto = new static;
 

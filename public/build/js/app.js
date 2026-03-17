@@ -1,0 +1,1 @@
+function inicarAPP(){}document.addEventListener("DOMContentLoaded",function(){inicarAPP()});
