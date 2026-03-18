@@ -4,7 +4,7 @@ namespace Model;
 
 class Usuario extends ActiveRecord {
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'password2', 'token', 'confirmado'];
+    protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'token', 'confirmado'];
 
     public $id;
     public $nombre;
