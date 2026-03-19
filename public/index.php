@@ -32,6 +32,8 @@ $router->get('/confirmar', [LoginController::class, 'confirmar']);
 //Zona de Proyectos
 $router->get('/dashboard', [DashboardController::class, 'dashboard']);
 $router->get('/crear-proyecto', [DashboardController::class, 'crear_Proyecto']);
+$router->post('/crear-proyecto', [DashboardController::class, 'crear_Proyecto']);
+$router->get('/proyecto', [DashboardController::class, 'proyecto']);
 $router->get('/perfil', [DashboardController::class, 'perfil']);
 
 

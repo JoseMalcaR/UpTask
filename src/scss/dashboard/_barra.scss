@@ -11,12 +11,17 @@
         justify-content: space-between;
         align-items: center;
     }
-    
+  
     p{
         margin: 0;
         font-size: 1.4rem;
-        
-        span {
+        color: v.$blanco;
+
+        .bienvenida {
+            color: v.$gris;
+        }
+
+        .usuario {
             font-weight: 700;
             color: v.$indigo;
         }

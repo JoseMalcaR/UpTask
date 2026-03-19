@@ -3,6 +3,6 @@
     <input 
     type="text" 
     id="nombre" 
-    name="nombre" 
+    name="proyecto" 
     placeholder="Nombre del Proyecto">
 </div>
